@@ -1,5 +1,4 @@
 #include "functions.h"
-#include <fstream>
 #include <iostream>
 
 int main(){
@@ -8,7 +7,10 @@ int main(){
 		
 		switch (mode){
 			case 1:
-				std::cout << "read\n";
+				readFile();
+				break;
+			case 2:
+				writeFile();
 				break;
 			default:
 				std::cout << "exit\n";
