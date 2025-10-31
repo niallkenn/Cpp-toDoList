@@ -12,6 +12,9 @@ int main(){
 			case 2:
 				writeFile();
 				break;
+			case 3:
+				deleteTask();
+				break;
 			default:
 				std::cout << "exit\n";
 				return 0;
