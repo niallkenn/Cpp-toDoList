@@ -38,14 +38,16 @@ void writeFile(){
  
 void readFile(){
 	std::cout << "---------------------------------------------------------------\n";
-	std::ifstream inf { "tasks.txt" }; 
+	std::ifstream inf { "tasks.txt" };
+	int i = 1; 
 	if (!inf){
 		std::cout << "Couldn't open file\n";
 		return;
 	}
 	std::string line;
 	while(std::getline(inf, line)){
-		std::cout << line << "\n";
+		std::cout << i << ". " << line << "\n";
+		i++;
 	}
 	std::cout << "---------------------------------------------------------------\n";
 }
