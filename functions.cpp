@@ -11,6 +11,7 @@ int getInputMode(){
 	std::cout << "1. Read tasks\n";
 	std::cout << "2. Write task\n";
 	std::cout << "3. Delete task\n";
+	std::cout << "4. Delete all tasks\n";
 	std::cout << "Other: Exit\n";
 
 	std::cout << "---------------------------------------------------------------\n";
@@ -64,10 +65,12 @@ void deleteTask(){
 	std::string lineNum;
 	std::string line;
 
+	std::ifstream inf { "tasks.txt"};
+	if (!inf) return;
+
 	std::cout << "Enter line number:\n";
 	std::cin >> lineNum;
 	
-	std::ifstream inf { "tasks.txt"};
 	std::vector<std::string> tasks = {};
 	while(std::getline(inf, line)){
 		tasks.push_back(line + "\n");
